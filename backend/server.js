@@ -1,10 +1,18 @@
 const { urlencoded } = require('body-parser')
 const express = require('express')
 const dotenv = require('dotenv').config()
+const colors = require('colors')
+
+const connectionDB = require('./config/db')
 
 const { errorHandler } = require('./middlewares/errorHandler')
 
 const port = process.env.PORT || 5000
+
+
+connectionDB()
+
+
 
 const app = express()
 
